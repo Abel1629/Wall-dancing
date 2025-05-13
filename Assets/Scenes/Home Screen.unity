@@ -1043,6 +1043,50 @@ Transform:
   - {fileID: 674073494}
   m_Father: {fileID: 1309170495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &311156800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311156802}
+  - component: {fileID: 311156801}
+  m_Layer: 0
+  m_Name: VideoController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &311156801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311156800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2860ec733b3faa44da70a710b0835c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &311156802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311156800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.228465, y: 3.6731884, z: 15.457134}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &334344753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,7 +2423,7 @@ GameObject:
   - component: {fileID: 715490726}
   - component: {fileID: 715490725}
   m_Layer: 5
-  m_Name: MoriczAbel (4)
+  m_Name: Alejandro Kuszlak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2401,7 +2445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -64.645}
+  m_AnchoredPosition: {x: 0, y: -24.453}
   m_SizeDelta: {x: 440.1687, y: 48.9045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &715490725
@@ -2424,7 +2468,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Student 5
+  m_text: Alejandro Kuszlak
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3254,7 +3298,7 @@ GameObject:
   - component: {fileID: 901273825}
   - component: {fileID: 901273824}
   m_Layer: 5
-  m_Name: MoriczAbel (2)
+  m_Name: Gabriela Kura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3276,7 +3320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 33.163864}
+  m_AnchoredPosition: {x: 0, y: 76.096}
   m_SizeDelta: {x: 440.1687, y: 48.9045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &901273824
@@ -3299,9 +3343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Student 3
-
-'
+  m_text: 'Gabriela Kura '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5752,7 +5794,7 @@ GameObject:
   - component: {fileID: 1309181519}
   - component: {fileID: 1309181518}
   m_Layer: 5
-  m_Name: MoriczAbel (1)
+  m_Name: Franka Nordmann
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5774,7 +5816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 82.06837}
+  m_AnchoredPosition: {x: 0, y: 125}
   m_SizeDelta: {x: 440.1687, y: 48.9045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1309181518
@@ -5797,7 +5839,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Student 2
+  m_text: Franka Nordmann
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6748,7 +6790,7 @@ GameObject:
   - component: {fileID: 1539997995}
   - component: {fileID: 1539997994}
   m_Layer: 5
-  m_Name: MoriczAbel (3)
+  m_Name: Federico Cafferati
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6770,7 +6812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -15.740646}
+  m_AnchoredPosition: {x: 0, y: -73.357}
   m_SizeDelta: {x: 440.1687, y: 48.9045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1539997994
@@ -6793,7 +6835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Student 4
+  m_text: Federico Cafferati
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8302,7 +8344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 130.97296}
+  m_AnchoredPosition: {x: 0, y: 24.452}
   m_SizeDelta: {x: 440.1687, y: 48.9045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884443847
@@ -9424,3 +9466,4 @@ SceneRoots:
   - {fileID: 491807629}
   - {fileID: 536562791425733186}
   - {fileID: 2028790449}
+  - {fileID: 311156802}

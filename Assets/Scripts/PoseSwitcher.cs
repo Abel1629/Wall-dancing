@@ -8,6 +8,8 @@ public class PoseSwitcher : MonoBehaviour
 
     private Transform[] poses;
 
+    [SerializeField] public string pose = "0";
+
     void Start()
     {
         // the total number of poses
@@ -32,12 +34,7 @@ public class PoseSwitcher : MonoBehaviour
 
     void Update()
     {
-        if (!string.IsNullOrEmpty(Input.inputString))
-        {
-            string key = Input.inputString;
-            SwitchToPose(key);
-        }
-
+        SwitchToPose(pose);
     }
 
     // makes the pose on the given index active, also deactivates the previous pose
@@ -49,10 +46,10 @@ public class PoseSwitcher : MonoBehaviour
     }
 
     // changes to a pose based on the input
-    public void SwitchToPose(string key)
+    public void SwitchToPose(string pose)
     {
         if (!wallCollisionMade) {
-            switch (key)
+            switch (pose)
             {
                 case "0":
                     Switching(0);
