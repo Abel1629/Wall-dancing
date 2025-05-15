@@ -75,8 +75,13 @@ if __name__ == "__main__":
     mlp_model = tf.keras.models.load_model(os.path.join(save_dir, 'pose_classifier_model.h5'))
 
     # set up connection to game
-    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client.connect((HOST, PORT))
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind((HOST, PORT))
+    server.listen(1)
+    print("Waiting for Unity connection...")
+    client, addr = server.accept()
+    print("Connected to Unity at", addr)
+
 
     # open camera
     cap = cv2.VideoCapture(0)
@@ -102,4 +107,5 @@ if __name__ == "__main__":
 
     cap.release()
     client.close()
+    server.close()
     cv2.destroyAllWindows()
