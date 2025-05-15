@@ -1,13 +1,9 @@
 # ---------------------- Imports ---------------------- #
 import os
+import sys
 import cv2
-import random
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 import joblib
-import math
 
 import socket
 
@@ -55,22 +51,32 @@ def detect_pose(photo, model, scaler, pose):
     else:
         return 404 # no pose detected because keypoints where not extracted correctly
 
-def send_pose_number(num):
+def send_pose_number(num, client):
     try:
-        sock.sendall(str(num).encode('utf-8'))
+        message = f"{num}\n"
+        client.sendall(message.encode('utf-8'))
     except Exception as e:
         print("Error sending pose number:", e)
+
+def resource_path(relative_path):
+    try:
+        # When using PyInstaller
+        base_path = sys._MEIPASS
+    except AttributeError:
+        # When running normally
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 
 # ---------------------- Main Script ---------------------- #
 if __name__ == "__main__":    
-    save_dir = os.path.join(os.getcwd(), 'TrainedModels')
+    save_dir = resource_path('TrainedModels')
     scaler = joblib.load(os.path.join(save_dir, 'scaler.pkl'))
     mlp_model = tf.keras.models.load_model(os.path.join(save_dir, 'pose_classifier_model.h5'))
 
     # set up connection to game
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((HOST, PORT))
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((HOST, PORT))
 
     # open camera
     cap = cv2.VideoCapture(0)
@@ -85,15 +91,15 @@ if __name__ == "__main__":
             break
         mirrored_frame = cv2.flip(frame, 1) # mirrow image as mlp was trained with camera images
         cv2.imshow('frame', mirrored_frame)
-        pose_num = detect_pose(mirrored_frame, mlp_model, scaler, pose)
+        pose_num = detect_pose(frame, mlp_model, scaler, pose)
         print(f"Detected pose: {pose_num}")
 
         if (pose_num <= 12 and pose_num >= 0):
-            send_pose_number(pose_num)
+            send_pose_number(pose_num, client)
 
         if cv2.waitKey(5) & 0xFF == ord('q'):  # Q to quit
             break
 
     cap.release()
-    sock.close()
+    client.close()
     cv2.destroyAllWindows()
