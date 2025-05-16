@@ -67,6 +67,8 @@ def generate_dataframe(data_path, pose):
             }
 
             data.append(row)
+        print(f'Images from class {label} added to dataframe')
+
 
     df_poses = pd.DataFrame(data)
     return df_poses, failed_count, keypoint_columns
@@ -120,6 +122,8 @@ def visualize_keypoints_per_class(df_poses, pose_num_map, keypoint_columns, mp_p
         plt.title(f"Pose: {pose_num_map[pose_num]}")
         plt.axis('off')
 
+    plt.savefig('keypoints_per_class.png')
+
 
 def build_pose_classifier(input_dim=132, num_classes=13):
     model = models.Sequential([
@@ -156,17 +160,34 @@ def train_save_mlp(model, X_train, y_train, X_val, y_val, save_dir, epochs=100, 
     )
     model_path = os.path.join(save_dir, 'pose_classifier_model.h5')
     model.save(model_path)
+
+    model_path_keras = os.path.join(save_dir, "pose_classifier_model.keras")
+    model.save(model_path_keras)
     return history
 
 
 def visualize_training_history(history):
+    epochs = range(1, len(history.history['accuracy']) + 1)
+    
     plt.figure(figsize=(8,8))
-    plt.plot(history.history['accuracy'])
-    plt.plot(history.history['val_accuracy'])
+    plt.plot(epochs, history.history['accuracy'])
+    plt.plot(epochs, history.history['val_accuracy'])
     plt.title('Model Accuracy')
     plt.ylabel('Accuracy')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Validation'], loc='upper left')
+    plt.tight_layout()
+    plt.savefig('training_accuracy.png')
+
+    plt.figure(figsize=(8,8))
+    plt.plot(epochs, history.history['loss'], label='Training Loss')
+    plt.plot(epochs, history.history['val_loss'], label='Validation Loss')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.title('Model Loss')
+    plt.legend(['Train', 'Validation'], loc='upper left')
+    plt.tight_layout()
+    plt.savefig('training_loss.png')
 
 
 def predict_and_visualize(X_val, y_val, model, pose_num_map):
@@ -182,6 +203,8 @@ def predict_and_visualize(X_val, y_val, model, pose_num_map):
     plt.xlabel('Predicted')
     plt.ylabel('True')
     plt.title('Confusion Matrix')
+
+    plt.savefig('confusion_matrix.png')
 
     return y_pred
 
