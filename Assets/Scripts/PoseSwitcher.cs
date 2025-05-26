@@ -91,15 +91,15 @@ public class PoseSwitcher : MonoBehaviour
                     Switching(9);
                     break;
 
-                case "q":
+                case "10":
                     Switching(10);
                     break;
 
-                case "w":
+                case "11":
                     Switching(11);
                     break;
 
-                case "e":
+                case "12":
                     Switching(12);
                     break;
             }
